@@ -18,7 +18,7 @@ jobs:
       - store_artifacts:
           path: restassured_1st/report/
           destination: report_1st
-  build_1st:
+  build_2nd:
     docker:
       - image: circleci/python:3.6
     steps:
@@ -41,3 +41,4 @@ workflows:
   workflow:
     jobs:
     - build_1st
+    - build_2nd
