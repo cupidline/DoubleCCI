@@ -1,11 +1,12 @@
 version: 2
 jobs:
   build_1st:
-    working_directory: ~/restassured_1st
     docker:
       - image: circleci/python:3.6
     steps:
       - checkout
+      - run:
+            cd restassured_1st
       - run:
           command: |
             sudo pip install django-rest-assured
