@@ -18,3 +18,8 @@ jobs:
       - store_artifacts:
           path: report/
           destination: report_1st
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build_1st
