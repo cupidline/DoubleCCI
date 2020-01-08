@@ -18,6 +18,24 @@ jobs:
       - store_artifacts:
           path: restassured_1st/report/
           destination: report_1st
+  build_1st:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo pip install django-rest-assured
+            sudo pip install -U pytest
+            sudo pip install pytest-html
+      - run:
+          name: Running tests
+          command: |
+            cd restassured_2nd
+            pytest -sv --html report/report.html
+      - store_artifacts:
+          path: restassured_2nd/report/
+          destination: report_2nd
 workflows:
   version: 2
   workflow:
