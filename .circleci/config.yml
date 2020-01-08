@@ -16,7 +16,7 @@ jobs:
             cd restassured_1st
             pytest -sv --html report/report.html
       - store_artifacts:
-          path: report/
+          path: restassured_1st/report/
           destination: report_1st
 workflows:
   version: 2
