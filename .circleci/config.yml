@@ -6,8 +6,6 @@ jobs:
     steps:
       - checkout
       - run:
-            cd restassured_1st
-      - run:
           command: |
             sudo pip install django-rest-assured
             sudo pip install -U pytest
@@ -15,6 +13,7 @@ jobs:
       - run:
           name: Running tests
           command: |
+            cd restassured_1st
             pytest -sv --html report/report.html
       - store_artifacts:
           path: report/
